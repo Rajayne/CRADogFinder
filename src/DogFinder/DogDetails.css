@@ -3,3 +3,17 @@
     width: 300px;
     object-fit: cover;
 }
+
+.DogDetails-list {
+    list-style: none;
+}
+
+.BackButton {
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+
+.BackButton:hover {
+    color: lightblue;
+}

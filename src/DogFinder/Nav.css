@@ -1,0 +1,9 @@
+.Nav-link {
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+
+.Nav-link:hover {
+    color: lightblue;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import dogs from "./dogs";
+import BackButton from "./BackButton";
 import "./DogDetails.css";
 
 const DogDetails = () => {
@@ -22,12 +23,13 @@ const DogDetails = () => {
       <div className="DogDetails">
         <h1 className="DogDetails-title">{dog.name} Details</h1>
         <img className="DogDetails-image" src={dog.src} alt={dog.name}></img>
-        <p>Age: {dog.age}</p>
-        <ul>
+        <p className="DogDetails-age">Age: {dog.age}</p>
+        <ul className="DogDetails-list">
           {dog.facts.map((fact) => (
             <li>{fact}</li>
           ))}
         </ul>
+        <BackButton />
       </div>
     );
   }
