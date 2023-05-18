@@ -1,0 +1,13 @@
+.ColorList-header {
+    background-color: #282c34;
+    padding: 2rem;
+}
+
+.ColorList-body {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    color: black;
+    margin: 1rem;
+    padding: 1rem;
+}

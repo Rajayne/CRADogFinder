@@ -1,0 +1,8 @@
+.ColorNav-link {
+    color: black;
+    display: block;
+}
+
+.ColorNav-link:hover {
+    color: lightblue;
+}

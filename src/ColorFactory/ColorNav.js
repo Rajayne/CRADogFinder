@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./ColorNav.css";
 import colors from "./colors";
 
 const ColorNav = () => {
   return (
-    <nav className="Nav-bar">
+    <nav className="ColorNav-bar">
       {colors.map((color) => (
-        <NavLink className="Nav-link" exact="true" to={`/colors/${color}`}>
+        <NavLink className="ColorNav-link" exact="true" to={`/colors/${color}`}>
           {color}
         </NavLink>
       ))}
