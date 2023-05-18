@@ -1,0 +1,28 @@
+.ColorForm {
+    background-color: rgb(69, 83, 97);
+    border-radius: 10px;
+}
+
+.ColorForm-name {
+    display: block;
+    padding: 1rem;
+}
+
+.ColorForm-hex {
+    display: block;
+    padding: 1rem;
+}
+
+.ColorForm-label {
+    padding: 1rem;
+}
+
+.ColorForm-input {
+    width: 100px;
+}
+
+.ColorForm button {
+    margin: 1.5rem;
+    padding: .3rem;
+    border: none;
+}
