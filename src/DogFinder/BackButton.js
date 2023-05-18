@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BackButton = () => {
   return (
     <Link className="BackButton" exact="true" to={`/dogs`}>
-      Return to Home
+      Return to List
     </Link>
   );
 };

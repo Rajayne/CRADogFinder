@@ -1,0 +1,8 @@
+.Home-link {
+    color: white;
+    display: block;
+}
+
+.Home-link:hover {
+    color: lightblue;
+}
