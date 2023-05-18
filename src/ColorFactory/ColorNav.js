@@ -10,7 +10,7 @@ const ColorNav = () => {
         <NavLink
           className="ColorNav-link"
           exact="true"
-          to={`/colors/${color.value}`}
+          to={`/colors/${color.name}`}
         >
           {color.name}
         </NavLink>
