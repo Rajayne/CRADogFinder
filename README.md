@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Part 1: React Router Dog Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Build an app that routes to different dogs and displays information on that dog when you’re at that route.
 
-## Available Scripts
+The routes should include:
 
-In the project directory, you can run:
+- `/dogs` as the homepage and shows all three dogs
+- Clicking on a dog from the homepage takes you to that dog’s route i.e. clicking Whiskey should route to `/dogs/whiskey`
+- Any endpoint not listed should redirect to `/dogs`
 
-### `npm start`
+## Recommended Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You can preload the <App /> component with the following defaultProps for convenience:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+App.defaultProps = {
+  dogs: [
+    {
+      name: "Whiskey",
+      age: 5,
+      src: whiskey,
+      facts: [
+        "Whiskey loves eating popcorn.",
+        "Whiskey is a terrible guard dog.",
+        "Whiskey wants to cuddle with you!"
+      ]
+    },
+    {
+      name: "Duke",
+      age: 3,
+      src: duke,
+      facts: [
+        "Duke believes that ball is life.",
+        "Duke likes snow.",
+        "Duke enjoys pawing other dogs."
+      ]
+    },
+    {
+      name: "Perry",
+      age: 4,
+      src: perry,
+      facts: [
+        "Perry loves all humans.",
+        "Perry demolishes all snacks.",
+        "Perry hates the rain."
+      ]
+    },
+    {
+      name: "Tubby",
+      age: 4,
+      src: tubby,
+      facts: [
+        "Tubby is really stupid.",
+        "Tubby does not like walks.",
+        "Angelina used to hate Tubby, but claims not to anymore."
+      ]
+    }
+  ]
+}
+```
 
-### `npm test`
+## Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. `<App />` should render:
 
-### `npm run build`
+- `<Nav />` component with the dogs’ names passed as props
+- `<Switch>` component with `<Route />` declarations
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+Example:
+return (
+  <Switch>
+    <Route exact path="/dogs" >
+      <DogList /> // what props will this need?
+    </Route>
+    <Route path="/dogs/:name" >
+      <DogDetails /> // what props will this need?
+    </Route>
+    <Redirect to="/dogs" />
+  </Switch>
+);
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. `<DogList />` takes all the dog info from the props of `<App />`
+3. `<DogDetails />` shows all of the info about a single dog
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Bonus
 
-### `npm run eject`
+Is there a way to get the current dog before you render the component, passing dog instead of the entire list of dog data?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Part 2: React Router Color Factory
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Build an app that lets you view colors and add new colors.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## User Stories
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. User can go to `/colors` to see a list of all available colors.
+2. User can click on one of the colors in their colors list and is routed to see that color `/colors/:color`.
+3. User can click on a button to show add new color form `/colors/new`.
+4. User is redirected to the colors index after submitting new color form and new color appears at the top.
+5. If user navigates to an invalid URL they are redirected to the colors index page.
 
-## Learn More
+# Further Study
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Write tests for both applications.
+2. Persist colors data in localStorage (with useEffect).
+3. Add styling to both apps.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Further Study 2: React Router Calculator
 
-### Code Splitting
+Build a calculator that supports routes like:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- /add/1/2: should render a component that displays 3.
+- /subtract/3/2: should render a component that displays 1.
+- /multiply/6/4: should render a component that displays 24.
+- /divide/20/5: should render a component that displays 4.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> **Bonus:** Create calculator without using a different component for each of the four math operations!
