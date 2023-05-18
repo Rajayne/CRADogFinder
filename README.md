@@ -76,7 +76,7 @@ return (
     <Route path="/dogs/:name" >
       <DogDetails /> // what props will this need?
     </Route>
-    <Redirect to="/dogs" />
+    <Redirect to="/dogs" /> // Redirect is depreciated, use Navigate
   </Switch>
 );
 ```
