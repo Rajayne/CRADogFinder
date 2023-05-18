@@ -21,7 +21,7 @@ const ColorDetails = () => {
   } else {
     return (
       <div style={{ backgroundColor: color.value }} className="ColorDetails">
-        <h3>Color Details</h3>
+        <h3>Welcome to the {color.name} Page</h3>
         <BackButton />
       </div>
     );
