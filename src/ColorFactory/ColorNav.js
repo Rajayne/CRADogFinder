@@ -7,8 +7,12 @@ const ColorNav = () => {
   return (
     <nav className="ColorNav-bar">
       {colors.map((color) => (
-        <NavLink className="ColorNav-link" exact="true" to={`/colors/${color}`}>
-          {color}
+        <NavLink
+          className="ColorNav-link"
+          exact="true"
+          to={`/colors/${color.value}`}
+        >
+          {color.name}
         </NavLink>
       ))}
     </nav>

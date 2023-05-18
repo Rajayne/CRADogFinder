@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ColorForm.css";
 
 const ColorForm = () => {
+  const [color, setColor] = useState("");
+
   return (
     <form className="ColorForm">
       <h3>Add Color Form</h3>
