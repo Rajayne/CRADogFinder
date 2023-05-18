@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import dogs from "./dogs";
 
 const DogList = () => {
@@ -6,7 +7,9 @@ const DogList = () => {
     <div>
       <h1>Dog List</h1>
       {dogs.map((dog) => (
-        <p>{dog.name}</p>
+        <Link exact="true" to={`/dogs/${dog.name}`}>
+          {dog.name}
+        </Link>
       ))}
     </div>
   );
